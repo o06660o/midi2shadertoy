@@ -19,8 +19,8 @@ use midly::{
     num::{u7, u15, u24},
 };
 
-// const MIDI_FILE: &str = "届かない恋.mid";
-const MIDI_FILE: &str = "Karma.mid";
+// const MIDI_FILE: &str = "../test_assets/届かない恋.mid";
+const MIDI_FILE: &str = "../test_assets/Karma.mid";
 
 struct MetaData {
     tpb: u15,  // Ticks per beat.
@@ -53,8 +53,7 @@ struct Note {
 }
 
 fn main() {
-    let bytes =
-        fs::read(format!("../test_assets/{}", MIDI_FILE)).expect("failed to read MIDI file");
+    let bytes = fs::read(MIDI_FILE).expect("failed to read MIDI file");
     let smf = Smf::parse(&bytes).expect("failed to parse MIDI file");
 
     // println!("Parsed MIDI file with {} tracks.", smf.tracks.len());

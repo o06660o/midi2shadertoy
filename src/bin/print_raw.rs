@@ -2,12 +2,11 @@ use std::fs;
 
 use midly::Smf;
 
-// const MIDI_FILE: &str = "届かない恋.mid";
-const MIDI_FILE: &str = "Karma.mid";
+// const MIDI_FILE: &str = "../test_assets/届かない恋.mid";
+const MIDI_FILE: &str = "../test_assets/Karma.mid";
 
 fn main() {
-    let bytes =
-        fs::read(format!("../../test_assets/{}", MIDI_FILE)).expect("failed to read MIDI file");
+    let bytes = fs::read(MIDI_FILE).expect("failed to read MIDI file");
     let smf = Smf::parse(&bytes).expect("failed to parse MIDI file");
 
     println!("MIDI file header: {:?}", smf.header);
