@@ -26,11 +26,8 @@ Online example: <https://www.shadertoy.com/view/t3KGzd>
 
 ## Usage
 
-The path to the MIDI file is currently hardcoded in the source code. To use a different file,
-update the `MIDI_FILE` constant in `src/main.rs` Then run
-
 ```bash
 git clone git@github.com:o06660o/midi2shadertoy.git
 cd midi2shadertoy
-cargo run --bin parser
+cargo run --bin parser -- <MIDI_FILE_PATH>
 ```
